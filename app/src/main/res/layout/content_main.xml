@@ -33,7 +33,7 @@
         android:layout_below="@+id/textView2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="#5ff95c" />
+        android:background="#abfaaa" />
 
     <TextView
         android:layout_width="fill_parent"
@@ -41,7 +41,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/txtReq1"
         android:textStyle="bold|italic"
-        android:background="#5ff95c"
+        android:background="#abfaaa"
         android:allowUndo="true"
         android:layout_below="@+id/textView3"
         android:layout_alignParentLeft="true"
@@ -55,7 +55,7 @@
         android:id="@+id/txtReq2"
         android:layout_alignParentStart="true"
         android:textStyle="bold|italic"
-        android:background="#5ff95c"
+        android:background="#abfaaa"
         android:allowUndo="true"
         android:layout_below="@+id/txtReq3"
         android:layout_alignParentLeft="true" />
@@ -66,11 +66,12 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/txtReq3"
         android:textStyle="bold|italic"
-        android:background="#5ff95c"
+        android:background="#abfaaa"
         android:allowUndo="true"
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/txtReq1"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true" />
 
     <TextView
         android:layout_width="wrap_content"
