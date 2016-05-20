@@ -22,7 +22,8 @@
         android:id="@+id/textView"
         android:textStyle="bold|italic"
         android:textAlignment="center"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:textColor="#000000" />
 
     <Spinner
         android:layout_width="wrap_content"
@@ -33,7 +34,7 @@
         android:layout_below="@+id/textView2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="#abfaaa" />
+        android:background="#f5f3f3" />
 
     <TextView
         android:layout_width="fill_parent"
@@ -41,7 +42,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/txtReq1"
         android:textStyle="bold|italic"
-        android:background="#abfaaa"
+        android:background="#f5f3f3"
         android:allowUndo="true"
         android:layout_below="@+id/textView3"
         android:layout_alignParentLeft="true"
@@ -55,7 +56,7 @@
         android:id="@+id/txtReq2"
         android:layout_alignParentStart="true"
         android:textStyle="bold|italic"
-        android:background="#abfaaa"
+        android:background="#f5f3f3"
         android:allowUndo="true"
         android:layout_below="@+id/txtReq3"
         android:layout_alignParentLeft="true" />
@@ -66,7 +67,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/txtReq3"
         android:textStyle="bold|italic"
-        android:background="#abfaaa"
+        android:background="#f5f3f3"
         android:allowUndo="true"
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/txtReq1"
@@ -83,7 +84,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="67dp"
-        android:textStyle="bold|italic" />
+        android:textStyle="bold|italic"
+        android:textColor="#000000" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -91,9 +93,10 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Pré-Requisitos:"
         android:id="@+id/textView3"
-        android:textStyle="bold"
+        android:textStyle="bold|italic"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="#000000" />
 
 </RelativeLayout>
