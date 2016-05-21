@@ -11,7 +11,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.alexf.ifsp.MainActivity"
     tools:showIn="@layout/activity_main"
-    android:background="#2df9f9">
+    android:background="#41b90e">
 
 
     <TextView
@@ -29,12 +29,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/spinner"
-        android:layout_marginTop="25dp"
         android:spinnerMode="dialog"
+        android:background="#f5f3f3"
         android:layout_below="@+id/textView2"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:background="#f5f3f3" />
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="fill_parent"
@@ -44,22 +43,22 @@
         android:textStyle="bold|italic"
         android:background="#f5f3f3"
         android:allowUndo="true"
-        android:layout_below="@+id/textView3"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="39dp" />
+        android:layout_above="@+id/txtReq3"
+        android:layout_alignParentLeft="true" />
 
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/txtReq2"
-        android:layout_alignParentStart="true"
         android:textStyle="bold|italic"
         android:background="#f5f3f3"
         android:allowUndo="true"
-        android:layout_below="@+id/txtReq3"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="68dp" />
 
     <TextView
         android:layout_width="fill_parent"
@@ -70,9 +69,8 @@
         android:background="#f5f3f3"
         android:allowUndo="true"
         android:layout_alignParentEnd="true"
-        android:layout_below="@+id/txtReq1"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true" />
+        android:layout_above="@+id/txtReq2"
+        android:layout_alignParentLeft="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -80,12 +78,11 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Disciplinas"
         android:id="@+id/textView2"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="67dp"
         android:textStyle="bold|italic"
-        android:textColor="#000000" />
+        android:textColor="#000000"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -94,9 +91,99 @@
         android:text="Pré-Requisitos:"
         android:id="@+id/textView3"
         android:textStyle="bold|italic"
-        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#000000"
+        android:layout_above="@+id/txtReq1"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Selecione o Semestre Atual"
+        android:id="@+id/textView13"
+        android:layout_marginTop="26dp"
+        android:textColor="#000000"
+        android:textStyle="bold|italic"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cboSemestre"
+        android:layout_below="@+id/textView13"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:textColor="#000000" />
+        android:spinnerMode="dialog"
+        android:background="#ffffff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Disciplinas Cursadas"
+        android:id="@+id/textView14"
+        android:textStyle="bold|italic"
+        android:textColor="#000000"
+        android:layout_below="@+id/cboSemestre"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="27dp" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New CheckBox"
+        android:id="@+id/checkBox"
+        android:layout_below="@+id/textView14"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New CheckBox"
+        android:id="@+id/checkBox2"
+        android:layout_alignTop="@+id/checkBox"
+        android:layout_toRightOf="@+id/checkBox"
+        android:layout_toEndOf="@+id/checkBox" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New CheckBox"
+        android:id="@+id/checkBox3"
+        android:layout_alignTop="@+id/checkBox2"
+        android:layout_toRightOf="@+id/checkBox2"
+        android:layout_toEndOf="@+id/checkBox2" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New CheckBox"
+        android:id="@+id/checkBox4"
+        android:layout_below="@+id/checkBox3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New CheckBox"
+        android:id="@+id/checkBox5"
+        android:layout_alignTop="@+id/checkBox4"
+        android:layout_toLeftOf="@+id/checkBox3"
+        android:layout_toStartOf="@+id/checkBox3" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New CheckBox"
+        android:id="@+id/checkBox6"
+        android:layout_alignTop="@+id/checkBox5"
+        android:layout_alignLeft="@+id/checkBox3"
+        android:layout_alignStart="@+id/checkBox3" />
 
 </RelativeLayout>
