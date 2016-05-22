@@ -1,21 +1,17 @@
 package com.example.alexf.ifsp;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Adapter;
 import android.widget.AdapterView;
-import android.widget.AutoCompleteTextView;
+import android.widget.CheckBox;
 import android.widget.Spinner;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
@@ -24,7 +20,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             "ANÁLISE ORIENTADA A OBJETOS - AOOI3","INTERAÇÃO HUMANO-COMPUTADOR - IHCI3", "ESTATÍSTICA - ESTI4","REDES DE COMPUTADORES - RCOI4",
             "PROGRAMAÇÃO ORIENTADA A OBJETOS - POOI4","ESTRUTURA DE DADOS II - ED2I4","ARQUITETURA DE SOFTWARE - ASWI4",
             "SERVICOS DE REDE - SSRI5","PROJETO DE SISTEMAS I - PS1I5","QUALIDADE DE SOFTWARE - QSWI5","GESTÃO DE PROJETOS - GPRI5","SEGURANÇA DA INFORMAÇÃO - SSII6",
-            "PROJETO DE SISTEMAS II - PS2I6","DESENVOLVIMENTO DE SISTEMAS WEB - DSWI6","EMPREENDEDORISMO - EMPI6"};
+            "PROJETO DE SISTEMAS II - PS2I6","DESENVOLVIMENTO DE SISTEMAS WEB - DSWI6","EMPREENDEDORISMO - EMPI6"
+    };
+
+    private static final String[] SEMESTRES=new String[]{
+            " * SELECIONE O SEMESTRE ATUAL* ","1º SEMESTRE","2º SEMESTRE","3º SEMESTRE","4º SEMESTRE","5º SEMESTRE","6º SEMESTRE"
+    };
 
 @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +35,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         setSupportActionBar(toolbar);
 
 
+
         final Spinner combo=(Spinner)findViewById(R.id.spinner);
-        ArrayAdapter adp=new ArrayAdapter(this,android.R.layout.simple_spinner_dropdown_item,DISCIPLINAS);
+        ArrayAdapter<String> adp=new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,DISCIPLINAS);
         adp.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         combo.setAdapter(adp);
 
@@ -121,9 +123,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 }else{
                     limpar();
                 }
-
-
             }
+
 
             public void limpar(){
                 TextView txtUm=(TextView)findViewById(R.id.txtReq1);
@@ -132,6 +133,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 txtUm.setText("");
                 txtDois.setText("");
                 txtTres.setText("");
+                
             }
 
             @Override
@@ -140,7 +142,90 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             }
         });
 
-    }
+        final Spinner cboSemestre=(Spinner)findViewById(R.id.cboSemestre);
+        ArrayAdapter<String> adpSemestre=new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,SEMESTRES);
+        adp.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        cboSemestre.setAdapter(adpSemestre);
+
+
+        cboSemestre.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+            CheckBox ch1=(CheckBox)findViewById(R.id.chbMateria1);
+            CheckBox ch2=(CheckBox)findViewById(R.id.chbMateria2);
+            CheckBox ch3=(CheckBox)findViewById(R.id.chbMateria3);
+            CheckBox ch4=(CheckBox)findViewById(R.id.chbMateria4);
+            CheckBox ch5=(CheckBox)findViewById(R.id.chbMateria5);
+            CheckBox ch6=(CheckBox)findViewById(R.id.chbMateria6);
+            CheckBox ch7=(CheckBox)findViewById(R.id.chbMateria7);
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (cboSemestre.getSelectedItem()=="1º SEMESTRE"){
+                    limpa();
+                    ch7.setVisibility(View.VISIBLE);
+                    ch1.setText("HCTI1");
+                    ch2.setText("INGI1");
+                    ch3.setText("CEEI1");
+                    ch4.setText("MATI1");
+                    ch5.setText("APOI1");
+                    ch6.setText("ARQI1");
+                    ch7.setText("LP1I1");
+                }else if (cboSemestre.getSelectedItem()=="4º SEMESTRE"){
+                    limpa();
+                    ch1.setText("MPCI4");
+                    ch2.setText("ESTI4");
+                    ch3.setText("ED2I4");
+                    ch4.setText("POOI4");
+                    ch5.setText("RCOI4");
+                    ch6.setText("ASWI4");
+
+                }else if (cboSemestre.getSelectedItem()=="5º SEMESTRE"){
+                    limpa();
+                    ch1.setText("GPRI5");
+                    ch2.setText("DWEI5");
+                    ch3.setText("PS1I5");
+                    ch4.setText("QSWI5");
+                    ch5.setText("SSRI5");
+                    ch6.setText("EL1I5");
+                }else if (cboSemestre.getSelectedItem()=="6º SEMESTRE"){
+                    limpa();
+                    ch1.setText("EMPI6");
+                    ch2.setText("TPEI6");
+                    ch3.setText("SSII6");
+                    ch4.setText("DSWI6");
+                    ch5.setText("PS2I6");
+                    ch6.setText("EL2I6");
+                }else{
+                    limpa();
+                }
+            }
+
+            public void limpa(){
+                ch7.setVisibility(View.INVISIBLE);
+                ch1.setText("");
+                ch2.setText("");
+                ch3.setText("");
+                ch4.setText("");
+                ch5.setText("");
+                ch6.setText("");
+                ch7.setText("");
+                ch1.setChecked(false);
+                ch2.setChecked(false);
+                ch3.setChecked(false);
+                ch4.setChecked(false);
+                ch5.setChecked(false);
+                ch6.setChecked(false);
+                ch7.setChecked(false);
+
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+}
 
 
     @Override
@@ -171,6 +256,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+
+            Intent intent= new Intent(MainActivity.this,Sobre.class);
+            startActivity(intent);
             return true;
         }
 
