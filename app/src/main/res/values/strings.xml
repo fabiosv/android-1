@@ -1,4 +1,5 @@
 <resources>
-    <string name="app_name">IFSP - Campus Campinas</string>
-    <string name="action_settings">Sobre</string>
+    <string name="app_name">IFSP - Campinas</string>
+    <string name="ifsp">O Instituto</string>
+    <string name="sobre">Sobre</string>
 </resources>

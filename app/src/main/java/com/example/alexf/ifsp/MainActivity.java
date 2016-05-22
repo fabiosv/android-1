@@ -133,7 +133,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 txtUm.setText("");
                 txtDois.setText("");
                 txtTres.setText("");
-                
+
             }
 
             @Override
@@ -169,6 +169,24 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     ch5.setText("APOI1");
                     ch6.setText("ARQI1");
                     ch7.setText("LP1I1");
+                }else if (cboSemestre.getSelectedItem()=="2º SEMESTRE"){
+                    limpa();
+                    ch1.setText("ADMI2");
+                    ch2.setText("BD1I2");
+                    ch3.setText("ESWI2");
+                    ch4.setText("SOPI2");
+                    ch5.setText("LP2I2");
+                    ch6.setText("IGTI2");
+
+                }else if (cboSemestre.getSelectedItem()=="3º SEMESTRE"){
+                    limpa();
+                    ch1.setText("AOOI3");
+                    ch2.setText("BD2I3");
+                    ch3.setText("IHCI3");
+                    ch4.setText("ED1I3");
+                    ch5.setText("LP3I3");
+                    ch6.setText("MFII3");
+
                 }else if (cboSemestre.getSelectedItem()=="4º SEMESTRE"){
                     limpa();
                     ch1.setText("MPCI4");
@@ -257,8 +275,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
 
-            Intent intent= new Intent(MainActivity.this,Sobre.class);
-            startActivity(intent);
+            Intent sobre= new Intent(MainActivity.this,Sobre.class);
+            startActivity(sobre);
+            return true;
+        }else if (id == R.id.ifsp) {
+
+            Intent ifsp= new Intent(MainActivity.this,Main2Activity.class);
+            startActivity(ifsp);
             return true;
         }
 
